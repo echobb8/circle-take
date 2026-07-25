@@ -1,0 +1,19 @@
+# Circle Take gate engine — verified dependency set (research/RESEARCH-tech.md).
+#
+# TRAP: opencv-contrib-python ONLY. Never install alongside opencv-python — they
+# ship the same `cv2` module and clobber each other; the contrib build is required
+# for cv2.FaceDetectorYN / cv2.FaceRecognizerSF / cv2.DISOpticalFlow.
+opencv-contrib-python==5.0.0.93
+numpy>=2.0,<3
+scikit-image==0.26.0
+scenedetect==0.7.1
+mediapipe==0.10.35
+
+# certifi arrives as a hard dependency of mediapipe and is used by models.py for
+# TLS verification: a stock python.org CPython on macOS ships no system CA store,
+# so model downloads fail with CERTIFICATE_VERIFY_FAILED without it. Listed here
+# so the requirement survives any future change to mediapipe's dependency tree.
+certifi
+
+# Dev/test only
+pytest>=8.0

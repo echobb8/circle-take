@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: Circle Take
+message: If you use this software, please cite it as below.
+type: software
+authors:
+  - family-names: Wasserman
+    given-names: Sam
+repository-code: https://github.com/wassermanproductions/circle-take
+license: Apache-2.0
+keywords:
+  - ai-filmmaking
+  - dailies
+  - video-qc
+  - take-management
+  - mcp
+abstract: >-
+  The dailies room for AI filmmaking — organize generated takes by shot, gate
+  them with local AI-artifact QC, compare, circle selects, and export
+  FCPXML/EDL plus reshoot lists. Fully local.

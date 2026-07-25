@@ -1,0 +1,24 @@
+CIRCLE TAKE — MAC USERS READ FIRST
+==================================
+
+If macOS says "Circle Take is damaged and can't be opened", the app is NOT
+damaged — it is unsigned, and macOS quarantines apps downloaded in a browser.
+
+EASIEST FIX — install from Terminal instead (terminal downloads are never
+quarantined). Paste this one line into Terminal:
+
+  curl -fsSL https://raw.githubusercontent.com/wassermanproductions/circle-take/main/install.sh | bash
+
+ALREADY DOWNLOADED THE DMG? Clear the quarantine flag once:
+
+  xattr -cr "/Applications/Circle Take.app"
+
+then open the app normally.
+
+FIRST LAUNCH: Circle Take needs ffmpeg (brew install ffmpeg) and Python 3.10+.
+On first run it builds its own Python environment and downloads two small
+vision models (~45 MB, checksum-verified). After that it runs fully offline —
+no accounts, no API keys, nothing uploaded.
+
+Created by Sam Wasserman — wassermanproductions.com · wasserman.ai
+Free & open source, Apache-2.0.

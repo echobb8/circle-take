@@ -1,0 +1,38 @@
+appId: com.wassermanproductions.circletake
+productName: Circle Take
+directories:
+  output: release
+files:
+  - out/**
+  - package.json
+# The Python gate engine ships as source; the app builds its own venv at
+# runtime under userData. Bundle the worker + requirements for first-run setup.
+extraResources:
+  - from: python
+    to: python
+  - from: mcp
+    to: mcp
+asarUnpack:
+  - '**/*.py'
+artifactName: 'CircleTake-${os}-${arch}.${ext}'
+mac:
+  category: public.app-category.video
+  icon: build/icon.icns
+  target:
+    - target: dmg
+      arch: [arm64]
+    - target: zip
+      arch: [arm64]
+  identity: null
+win:
+  icon: build/icon.png
+  artifactName: 'CircleTake-Setup.${ext}'
+  target: nsis
+linux:
+  maintainer: Sam Wasserman <sam@wassermanproductions.com>
+  icon: build/icon.png
+  category: AudioVideo
+  target:
+    - target: AppImage
+      arch: [x64]
+npmRebuild: false

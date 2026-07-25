@@ -1,0 +1,12 @@
+node_modules/
+out/
+release/
+dist/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+cache/
+test-results/
+capture/recordings/
+research/
