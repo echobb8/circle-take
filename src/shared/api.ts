@@ -1,3 +1,4 @@
+import type { ProductionSettings } from './production'
 /**
  * The typed IPC surface exposed to the renderer as `window.circletake`.
  * PURE types module. Main implements it (src/main/index.ts registers handlers),
@@ -65,6 +66,7 @@ export interface CircleTakeAPI {
   circleTake(takeId: string, circled: boolean): Promise<Project>
   setRating(takeId: string, rating: Rating): Promise<Project>
   setTakeWindow(takeId: string, inSec: number | null, outSec: number | null): Promise<Project>
+  setProduction(production: ProductionSettings): Promise<Project>
   setModelRates(rates: Record<string, number>): Promise<Project>
   deleteTake(takeId: string): Promise<Project>
 

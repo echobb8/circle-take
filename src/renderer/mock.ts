@@ -791,6 +791,7 @@ function makeMockApi(built: Built, startEmpty: boolean): CircleTakeAPI {
   }
 
   const api: CircleTakeAPI = {
+    async setProduction(production) { project.production = production; return push() },
     async createProject(_parentDir, name) {
       unopened = false
       project = {

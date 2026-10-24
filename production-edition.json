@@ -1,0 +1,9 @@
+{
+  "edition": "kids-3d",
+  "audience": "Ages 5\u20138",
+  "supportedBiblicalStoryModes": [
+    "original",
+    "scripture"
+  ],
+  "sourceOnly": true
+}

@@ -1,3 +1,4 @@
+import { productionDirection, productionReview } from '../shared/production'
 /**
  * Export writers. The document building lives in the pure src/shared builders;
  * this module only resolves the open project, gathers anything that has to
@@ -63,7 +64,8 @@ export async function exportReshootList(outPath: string): Promise<string> {
   }
 
   const { md, json } = buildReshootList(p, { evidenceByTake })
-  await writeFile(mdPath, md, 'utf-8')
-  await writeFile(jsonPath, `${JSON.stringify(json, null, 2)}\n`, 'utf-8')
+  const review = productionReview(p.production).map((item) => `- [ ] ${item}`).join('\n')
+  await writeFile(mdPath, `${md}\n\n## Production review (manual)\n\n${productionDirection(p.production)}\n\n${review}\n`, 'utf-8')
+  await writeFile(jsonPath, `${JSON.stringify({ ...json, production: p.production, manualReview: productionReview(p.production) }, null, 2)}\n`, 'utf-8')
   return mdPath
 }

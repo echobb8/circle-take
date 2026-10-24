@@ -1,3 +1,4 @@
+import { ProductionPanel } from './components/ProductionPanel'
 import { useEffect, useState } from 'react'
 import { useStore, type Room } from './store'
 import { Icon, LogoMark, type IconName } from './components/Icon'
@@ -256,6 +257,9 @@ export function App(): JSX.Element {
             <span className="mono project-meta">{project.takes.length} takes</span>
           </div>
           <div className="room-actions">
+            <ProductionPanel value={project.production} onChange={(production) => {
+              void window.circletake.setProduction(production).catch((error: Error) => useStore.getState().notify(error.message))
+            }} />
             <HeaderActions room={room} />
           </div>
         </header>

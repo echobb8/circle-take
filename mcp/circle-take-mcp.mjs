@@ -14,7 +14,7 @@ import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { homedir } from 'node:os'
 
-const DISCOVERY_FILE = join(homedir(), '.config', 'circle-take', 'control.json')
+const DISCOVERY_FILE = join(homedir(), '.config', 'circle-take-kids-3d', 'control.json')
 const PROTOCOL_VERSION = '2024-11-05'
 
 /* --------------------------------- tools -------------------------------- */

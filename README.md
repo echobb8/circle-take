@@ -1,3 +1,5 @@
+> **Production edition source fork:** Children’s 3D animation (ages 5–8) and realistic biblical cinema with original-story and Scripture modes. Read [PRODUCTION-EDITION.md](PRODUCTION-EDITION.md). Build this branch from source; upstream releases are the original apps.
+
 <div align="center">
 
 <img src="docs/images/logo.png" alt="Circle Take" width="520" />

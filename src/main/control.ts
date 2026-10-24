@@ -32,7 +32,7 @@ import * as kits from './kits'
 import * as exportsApi from './exports'
 import { getEngineStatus } from './pythonEnv'
 
-const CONFIG_DIR = join(homedir(), '.config', 'circle-take')
+const CONFIG_DIR = join(homedir(), '.config', 'circle-take-kids-3d')
 const DISCOVERY_FILE = join(CONFIG_DIR, 'control.json')
 const PROTOCOL_VERSION = 1
 const MAX_BODY = 10 * 1024 * 1024

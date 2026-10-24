@@ -1,5 +1,5 @@
-appId: com.wassermanproductions.circletake
-productName: Circle Take
+appId: com.wassermanproductions.circletake.kids3d
+productName: Circle Take Kids 3D
 directories:
   output: release
 files:

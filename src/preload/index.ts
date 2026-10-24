@@ -65,6 +65,7 @@ const api: CircleTakeBridge = {
   setRating: (takeId, rating) => ipcRenderer.invoke('setRating', takeId, rating),
   setTakeWindow: (takeId, inSec, outSec) =>
     ipcRenderer.invoke('setTakeWindow', takeId, inSec, outSec),
+  setProduction: (production) => ipcRenderer.invoke('setProduction', production),
   setModelRates: (rates) => ipcRenderer.invoke('setModelRates', rates),
   deleteTake: (takeId) => ipcRenderer.invoke('deleteTake', takeId),
 

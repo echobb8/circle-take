@@ -1,3 +1,4 @@
+import { defaultProduction, normalizeProduction } from '../shared/production'
 /**
  * The canonical Project store. MAIN owns it; the renderer only ever holds a
  * mirror that is refreshed by the `project-updated` broadcast this module
@@ -132,6 +133,7 @@ function emptyProject(name: string): Project {
   return {
     schema: PROJECT_SCHEMA_VERSION,
     name,
+    production: defaultProduction(),
     createdAt: new Date().toISOString(),
     settings: { copyMediaIntoProject: false },
     shots: [],
@@ -181,6 +183,7 @@ export function validateProject(raw: unknown): Project {
   return {
     schema: PROJECT_SCHEMA_VERSION,
     name: p.name,
+    production: normalizeProduction(p.production),
     createdAt: typeof p.createdAt === 'string' ? p.createdAt : new Date().toISOString(),
     settings: { ...settings, copyMediaIntoProject: settings.copyMediaIntoProject === true },
     shots: p.shots,
@@ -495,4 +498,9 @@ export function setWatchFolder(path: string | null): Project {
     if (path) p.settings.watchFolder = path
     else delete p.settings.watchFolder
   })
+}
+
+/** Persist production settings through the same main-owned transaction as other edits. */
+export function setProduction(value: unknown): Project {
+  return mutate((p) => { p.production = normalizeProduction(value) })
 }

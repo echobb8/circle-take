@@ -1,3 +1,4 @@
+import type { ProductionSettings } from './production'
 /**
  * Circle Take — shared contracts.
  * PURE module: no DOM, no Electron, no Node APIs. Imported by main, preload,
@@ -112,6 +113,7 @@ export interface ProjectSettings {
 }
 
 export interface Project {
+  production?: ProductionSettings
   schema: typeof PROJECT_SCHEMA_VERSION
   name: string
   createdAt: string

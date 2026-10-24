@@ -1,8 +1,8 @@
 {
-  "name": "circle-take",
-  "productName": "Circle Take",
+  "name": "circle-take-kids-3d",
+  "productName": "Circle Take Kids 3D",
   "version": "1.0.0",
-  "description": "The dailies room for AI filmmaking — manage every generated take, gate them with local AI-artifact QC, compare, circle the winners, and print selects + reshoot lists.",
+  "description": "The dailies room for AI filmmaking \u2014 manage every generated take, gate them with local AI-artifact QC, compare, circle the winners, and print selects + reshoot lists.",
   "main": "out/main/index.js",
   "author": "Sam Wasserman",
   "license": "Apache-2.0",

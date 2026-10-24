@@ -30,8 +30,8 @@ const isDev = !!process.env.ELECTRON_RENDERER_URL
 
 // Pin userData BEFORE renaming the app so the managed venv and caches keep a
 // stable home (and stay well outside any iCloud-synced folder).
-app.setPath('userData', join(app.getPath('appData'), 'circle-take'))
-app.setName('Circle Take')
+app.setPath('userData', join(app.getPath('appData'), 'circle-take-kids-3d'))
+app.setName('Circle Take Kids 3D')
 
 let mainWindow: BrowserWindow | null = null
 
@@ -364,6 +364,7 @@ function registerIpc(): void {
   handle('setTakeWindow', (takeId: string, inSec: number | null, outSec: number | null) =>
     project.setTakeWindow(takeId, inSec, outSec),
   )
+  handle('setProduction', (value: unknown) => project.setProduction(value))
   handle('setModelRates', (rates: Record<string, number>) => project.setModelRates(rates))
   handle('deleteTake', (takeId: string) => project.deleteTake(takeId))
 
@@ -449,7 +450,7 @@ app.on('window-all-closed', () => {
 // dialogs are unavailable. Exposed only under CTAKE_E2E=1; calls the exact
 // same mutators the IPC and control-server doors use.
 if (process.env.CTAKE_E2E === '1') {
-  ;(globalThis as Record<string, unknown>).__ctakeMain = {
+  (globalThis as Record<string, unknown>).__ctakeMain = {
     createProject: (parent: string, name: string) => project.createProject(parent, name),
     projectPath: () => project.getProjectPath(),
     state: () => project.getProject(),
