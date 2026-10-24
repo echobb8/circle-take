@@ -14,7 +14,7 @@ For Scripture adaptation, record book/chapter/verses and translation. Track dire
 
 ## Build and workflow
 
-Use the build and development commands in this app's original README. These branches contain source changes; existing upstream release downloads do not contain the editions. The suite hub provides branch-pinned source setup and project handoffs: https://github.com/echobb8/wassermans-filmmaker-suite/tree/kids-3d
+Use the build and development commands in this app's original README. These branches contain source changes; existing upstream release downloads do not contain the editions. The suite hub provides branch-pinned source setup and project handoffs: https://github.com/echobb8/wassermans-filmmaker-suite/tree/biblical-period
 
 Production settings are saved per project in Slate, Blockout (per scene), Storyboard Reference Studio, Circle Take, Cork Board and Master Canvas, and per session in Motion Previs Studio. In ScriptBreak they are saved with the project state and included in prompt-pack headers. Stem Studio prioritizes dialogue polish and offers sound-review guidance. Call Sheet points at edition-specific bundles. The DaVinci MCP exposes the read-only `production_brief` tool.
 

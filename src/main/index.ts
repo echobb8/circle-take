@@ -30,8 +30,8 @@ const isDev = !!process.env.ELECTRON_RENDERER_URL
 
 // Pin userData BEFORE renaming the app so the managed venv and caches keep a
 // stable home (and stay well outside any iCloud-synced folder).
-app.setPath('userData', join(app.getPath('appData'), 'circle-take-kids-3d'))
-app.setName('Circle Take Kids 3D')
+app.setPath('userData', join(app.getPath('appData'), 'circle-take-biblical-period'))
+app.setName('Circle Take Biblical Cinema')
 
 let mainWindow: BrowserWindow | null = null
 

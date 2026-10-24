@@ -10,7 +10,7 @@ export interface ProductionSettings {
   translation: string
   interpretation: string
 }
-export const DEFAULT_EDITION: ProductionEdition = 'kids-3d'
+export const DEFAULT_EDITION: ProductionEdition = 'biblical-period'
 export const EDITION_LABEL = String(DEFAULT_EDITION) === 'kids-3d' ? "Children's 3D · ages 5–8" : 'Biblical Cinema'
 export function defaultProduction(): ProductionSettings {
   return { edition: DEFAULT_EDITION, storyMode: 'original', era: '', region: '', passage: '', translation: '', interpretation: '' }
